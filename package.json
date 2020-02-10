@@ -1,0 +1,39 @@
+{
+  "name": "@edsdk/n1ed-react",
+  "version": "1.0.0",
+  "description": "React integration for N1ED editor",
+  "main": "dist/index.js",
+  "devDependencies": {
+    "@tinymce/tinymce-react": "^3.4.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.5",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "scripts": {
+    "dist": "webpack --config webpack-dist.config.js",
+    "debug": "webpack --config webpack-debug.config.js --watch"
+  },
+  "keywords": [
+    "tinymce",
+    "ckeditor",
+    "n1ed",
+    "react",
+    "editor",
+    "html",
+    "wysiwyg",
+    "visual",
+    "page",
+    "builder"
+  ],
+  "author": "http://n1ed.com",
+  "license": "LGPL v3",
+  "dependencies": {
+    "@types/react": "^16.9.19",
+    "@types/react-dom": "^16.9.5",
+    "dev": "^0.1.3"
+  }
+}
