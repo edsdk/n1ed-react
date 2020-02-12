@@ -1,6 +1,6 @@
 {
   "name": "@edsdk/n1ed-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React integration for N1ED editor",
   "main": "dist/index.js",
   "devDependencies": {
@@ -33,7 +33,6 @@
   "license": "LGPL v3",
   "dependencies": {
     "@types/react": "^16.9.19",
-    "@types/react-dom": "^16.9.5",
-    "dev": "^0.1.3"
+    "@types/react-dom": "^16.9.5"
   }
 }
