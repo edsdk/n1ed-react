@@ -1,0 +1,10 @@
+{
+  "defaultSeverity": "error",
+  "jsRules": {
+    "semicolon": true
+  },
+  "rules": {
+    "variable-name": false,
+    "no-string-literal": false
+  }
+}

@@ -1,21 +1,23 @@
 {
   "name": "@edsdk/n1ed-react",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "React integration for N1ED editor",
-  "main": "dist/index.js",
-  "devDependencies": {
-    "@tinymce/tinymce-react": "^3.4.0",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "source-map-loader": "^0.2.4",
-    "ts-loader": "^6.2.1",
-    "typescript": "^3.7.5",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+  "repository": {
+    "url": "https://github.com/edsdk/n1ed-react"
   },
+  "files": [
+    "lib",
+    "README.md",
+    "LICENSE.txt"
+  ],
+  "main": "lib/cjs/index.js",
+  "module": "lib/es2015/index.js",
   "scripts": {
-    "dist": "webpack --config webpack-dist.config.js",
-    "debug": "webpack --config webpack-debug.config.js --watch"
+    "lint": "tslint 'src/**/*.ts?(x)'",
+    "clean": "rimraf lib",
+    "build": "npm run clean && tsc -p ./tsconfig.es2015.json && tsc -p ./tsconfig.cjs.json",
+    "watch": "tsc -w -p ./tsconfig.es2015.json",
+    "prepare": "npm run build"
   },
   "keywords": [
     "tinymce",
@@ -29,10 +31,30 @@
     "page",
     "builder"
   ],
-  "author": "http://n1ed.com",
+  "author": "https://n1ed.com",
   "license": "LGPL v3",
   "dependencies": {
-    "@types/react": "^16.9.19",
-    "@types/react-dom": "^16.9.5"
+    "prop-types": "^15.6.2",
+    "@tinymce/tinymce-react": "^3.4.0"
+  },
+  "peerDependencies": {
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-0",
+    "@types/react": "^16.7.22",
+    "@types/react-dom": "^16.0.11",
+    "@types/prop-types": "^15.5.8",
+    "@types/node": "^10.12.19",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.0",
+    "raf": "^3.4.1",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "rimraf": "^2.6.3",
+    "ts-loader": "^5.3.3",
+    "tslint": "^5.12.1",
+    "typescript": "^3.2.4"
   }
 }

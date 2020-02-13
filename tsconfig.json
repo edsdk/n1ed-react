@@ -1,15 +1,31 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
     "jsx": "react",
-    "module": "commonjs",
-    "outDir": "./dist/",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "declaration": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "outDir": "./lib",
     "preserveConstEnums": true,
-    "removeComments": true,
-    "sourceMap": true,
+    "strictNullChecks": true,
     "target": "es5",
-    "baseUrl": "./src"
+    "types": [
+      "node",
+      "prop-types",
+      "react",
+      "react-dom"
+    ]
   },
   "include": [
-    "./src/**/*"
+    "src/**/*"
+  ],
+  "exclude": [
+    "**/*.test.tsx",
+    "node_modules"
   ]
 }

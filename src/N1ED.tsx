@@ -1,20 +1,15 @@
 import * as React from "react";
-import {Editor, IAllProps} from "@tinymce/tinymce-react/lib/es2015/main/ts";
-
-export interface N1EDProps extends IAllProps {
-}
+import {Editor, IAllProps} from "@tinymce/tinymce-react";
 
 interface N1EDState {
     loaded: boolean;
 }
 
-export class N1ED extends React.Component<N1EDProps> {
+export class N1ED extends React.Component<IAllProps> {
 
     state: N1EDState = {
         loaded: false
     };
-
-    props: N1EDProps;
 
     setState(state: Partial<N1EDState>, callback?: () => void) {
         super.setState(state, callback);
@@ -102,13 +97,10 @@ export class N1ED extends React.Component<N1EDProps> {
         let doc = document;
         let scripts = doc.getElementsByTagName("script");
         let alreadyExists = false;
-        let existingScript = null;
         for (let i: number = 0; i < scripts.length; i++) {
             let src: string | null = scripts[i].getAttribute("src");
-            if (src && src.indexOf(urlJS) !== -1) {
+            if (src && src.indexOf(urlJS) !== -1)
                 alreadyExists = true;
-                existingScript = scripts[i];
-            }
         }
         if (!alreadyExists) {
             let script: any = doc.createElement("script");
