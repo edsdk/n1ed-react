@@ -99,7 +99,7 @@ export class N1ED extends React.Component<IAllProps> {
         let alreadyExists = false;
         for (let i: number = 0; i < scripts.length; i++) {
             let src: string | null = scripts[i].getAttribute("src");
-            if (src && src.indexOf(urlJS) !== -1)
+            if (src && src === urlJS)
                 alreadyExists = true;
         }
         if (!alreadyExists) {

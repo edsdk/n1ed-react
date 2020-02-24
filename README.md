@@ -49,6 +49,12 @@ The only difference is:
 
 * You do not need to define ```plugins``` parameter with ```N1ED``` value: it is already defined until you specify something another.
 
+## Examples
+
+We have two examples how to use N1ED React component:
+* [N1ED React example (JavaScript)](https://github.com/edsdk/n1ed-react-example)
+* [N1ED React example (TypeScript)](https://github.com/edsdk/n1ed-react-typescript-example)
+
 ## Technical details
 
 ```@edsdk/n1ed-react``` uses ```@tinymce/tinymce-react``` module inside and delegates all calls to TinyMCE, except some special actions it does for initialization of correct environment related to connection with dinamyc CDN (which makes possible configuring your N1ED+TinyMCE instance visually online using [Dashboard](https://n1ed.com)).
@@ -56,7 +62,6 @@ The only difference is:
 ## TypeScript support
 
 This module is written with TypeScript and can be used in both JS and TS projects. You do not need to install typings separately, they are built in the project.
-
 
 ## License
 
