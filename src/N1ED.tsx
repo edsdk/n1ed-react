@@ -49,6 +49,7 @@ export class N1ED extends React.Component<IAllProps> {
                 {
                     ...this.props,
                     apiKey: undefined,
+                    integration: 'react',
                     inline: false,
                     outputFormat: 'html'
                 }
