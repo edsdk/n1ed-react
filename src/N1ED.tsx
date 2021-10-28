@@ -1,21 +1,15 @@
 import * as React from "react";
 import {Editor, IAllProps} from "@tinymce/tinymce-react";
 
-interface N1EDState {
-    loaded: boolean;
-}
-
 export class N1ED extends React.Component<IAllProps> {
 
-    state: N1EDState = {
-        loaded: false
-    };
-
-    setState(state: Partial<N1EDState>, callback?: () => void) {
-        super.setState(state, callback);
-    }
+    // Do not store in state, because this is global flag was script loaded on the page or not
+    static loaded: boolean = false;
 
     componentWillMount() {
+        if (N1ED.loaded)
+            return;
+
         let apiKey = "REACDFLT";
         let passedApiKey = this.props.apiKey;
         if (!passedApiKey && this.props.init && this.props.init.apiKey)
@@ -32,9 +26,8 @@ export class N1ED extends React.Component<IAllProps> {
 
             this.waitForTinyMCELoaded(
                 () => {
-                    this.setState({
-                        loaded: true
-                    });
+                    N1ED.loaded = true;
+                    this.forceUpdate();
                 }
             );
 
@@ -42,21 +35,13 @@ export class N1ED extends React.Component<IAllProps> {
     }
 
     render() {
-        if (this.state.loaded) {
+        if (N1ED.loaded) {
+
             let config = JSON.parse(JSON.stringify((window as any).n1edConfig));
-            this.mergeConfigs(
-                config,
-                {
-                    ...this.props,
-                    apiKey: undefined,
-                    integration: 'react',
-                    inline: false,
-                    outputFormat: 'html'
-                }
-            );
+            config["integration"] = "react";
 
             // @ts-ignore
-            return <Editor {...config}/>
+            return <Editor {...this.props} apiKey={undefined} inline={false} outputFormat="html" init={config}/>
         } else {
             return <div className="n1ed-loading"/>;
         }
