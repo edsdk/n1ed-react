@@ -38,6 +38,10 @@ export class N1ED extends React.Component<IAllProps> {
         if (N1ED.loaded) {
 
             let config = JSON.parse(JSON.stringify((window as any).n1edConfig));
+
+            if (!!this.props.init)
+                this.mergeConfigs(config, this.props.init);
+
             config["integration"] = "react";
 
             // @ts-ignore
