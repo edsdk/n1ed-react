@@ -3,9 +3,13 @@
 > Create and edit HTML content with powerful visual page builder based on TinyMCE 5
 
 **Q:** What can be better than TinyMCE 5?\
-**A:** TinyMCE 5 + free set of widgets, custom templates, modern UI and visual configuration: [N1ED](https://n1ed.com).
+**A:** TinyMCE 5 + free set of widgets, custom templates, modern UI, Flmngr file manager, ImgPen image editor and visual configuration: [N1ED](https://n1ed.com).
+
+![N1ED screenshot](https://n1ed.com/img/screenshots/docs/widgets/button/edit-button.png)
 
 This module will help to integrate N1ED (bundled TinyMCE 5 + all required free add-ons which power up it) into your React app.
+
+
 
 ## Install
 
