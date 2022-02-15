@@ -22,19 +22,41 @@ $ npm install --save @edsdk/n1ed-react
 
 ## Usage
 
+Here is an example of usage of TinyMCE + N1ED in your React component. This is JS sample, see links below for TypeScript one. 
+
+You can remove `init` parameter in case you do not wish to pass any custom config into TinyMCE. In this example we use it to define a custom toolbar and create inside it a custom TinyMCE button in order to show how to work with basic TinyMCE features from N1ED.
+
 ```js
-import {N1ED} from "@edsdk/n1ed-react";
+import React from 'react';
+import {N1ED} from '@edsdk/n1ed-react';
 
 
 class YourReactComponent {
+
+    handleEditorChange(content, editor) {
+        console.log('Content was updated:', content);
+    };
     
     render() {
         
         return <div>
             Edit the content:
-            <N1ED 
-                ...options here...
-                init={{ /* other settings */ }} 
+            <N1ED
+                apiKey="REACDFLT" // you will use your own key later
+                initialValue="<p>N1ED react demo</p>"
+                onEditorChange={this.handleEditorChange}
+
+                init={{
+                    height: 500,
+                    toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | myCustomToolbarButton',
+                    setup: (editor) => {
+                        console.log("TinyMCE initialized");
+                        editor.ui.registry.addButton('myCustomToolbarButton', {
+                            text: 'My Custom Button',
+                            onAction: () => alert('Custom button clicked!'),
+                        });
+                    },
+                }}
             />
         </div>;
         
