@@ -1,6 +1,6 @@
 {
   "name": "@edsdk/n1ed-react",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "React integration for N1ED editor",
   "repository": {
     "url": "https://github.com/edsdk/n1ed-react"

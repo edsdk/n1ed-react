@@ -1,13 +1,13 @@
 # TinyMCE + N1ED React component
 
-> Create and edit HTML content with powerful visual page builder based on TinyMCE
+> Create and edit HTML content with a powerful visual page builder based on TinyMCE
 
 **Q:** What can be better than TinyMCE?\
 **A:** The latest TinyMCE 6 + a free set of widgets, custom templates, modern UI, Flmngr file manager, ImgPen image editor, Bootstrap column editor, and visual configuration: [N1ED](https://n1ed.com).
 
 ![N1ED screenshot](https://n1ed.com/img/screenshots/docs/widgets/button/edit-button.png)
 
-This module will help to integrate N1ED (bundled TinyMCE + all required free add-ons which power up it) into your React app.
+This module will help to integrate N1ED (bundled TinyMCE + all required free add-ons that power up it) into your React app.
 
 
 ## Install
@@ -18,12 +18,14 @@ With [npm](https://npmjs.com/) installed, run
 $ npm install --save @edsdk/n1ed-react
 ```
 
+See full [React + TinyMCE + N1ED installation manual](https://n1ed.com/doc/install-n1ed-react-component) for more.
+
 
 ## Usage
 
-Here is an example of usage of TinyMCE + N1ED in your React component. This is JS sample, see links below for TypeScript one. 
+Here is an example of the usage of TinyMCE + N1ED in your React component. This is a JS sample, see the links below for TypeScript and JavaScript GitHub sample projects. 
 
-You can remove `init` parameter in case you do not wish to pass any custom config into TinyMCE. In this example we use it to define a custom toolbar and create inside it a custom TinyMCE button in order to show how to work with basic TinyMCE features from N1ED.
+In this example we use add N1ED and additionally (this is an optional) define a custom toolbar and create inside it a custom TinyMCE button in order to show how to work with basic TinyMCE features from N1ED.
 
 ```js
 import React from 'react';
@@ -67,7 +69,7 @@ class YourReactComponent {
 }
 ```
 
-**Important note:**: do NOT use TinyMCE as a *controlled* component (do NOT try to control the state of TinyMCE with a pair of `initialValue`/`onEditorChange`). TinyMCE supports only setting of initial value once, and then notifies your code about its change using the \`onEditorChange\` callback. React TinyMCE implementation is a classic *uncontrolled* component.  
+**Important note:**: do NOT use TinyMCE as a *controlled* component (do NOT try to control the state of TinyMCE with a pair of `initialValue`/`onEditorChange`). TinyMCE supports only setting of initial value once and then notifies your code about its change using the `onEditorChange` callback. React TinyMCE implementation is a classic *uncontrolled* component.  
 
 All the attributes of ```<N1ED>``` element are described in official [TinyMCE React docs](https://www.tiny.cloud/docs/integrations/react/).
 
@@ -75,11 +77,11 @@ The only difference is:
 
 * ```apiKey``` attribute here is related not to TinyMCE Cloud, but to N1ED cloud and is optional until you need to visually configure it or add some [other add-on](https://n1ed.com/plugins) from N1ED Ecosystem. 
 
-* You do not need to define ```plugins``` parameter with ```N1ED``` value: it is already defined until you specify something another.
+* You do not need to define ```plugins``` parameter with the ```N1ED``` value: it is already defined until you specify something another.
 
 ## Examples
 
-We have two examples how to use N1ED React component:
+We have two examples of how to use the N1ED React component:
 * [N1ED React example (JavaScript)](https://github.com/edsdk/n1ed-react-example)
 * [N1ED React example (TypeScript)](https://github.com/edsdk/n1ed-react-typescript-example)
 
@@ -89,7 +91,7 @@ We have two examples how to use N1ED React component:
 
 ## TypeScript support
 
-This module is written with TypeScript and can be used in both JS and TS projects. You do not need to install typings separately, they are built in the project.
+This module is written with TypeScript and can be used in both JS and TS projects. You do not need to install typings separately, they are built into the project.
 
 ## License
 
