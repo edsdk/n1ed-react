@@ -10,7 +10,7 @@ export class N1ED extends React.Component<IAllProps> {
         if (N1ED.loaded)
             return;
 
-        let apiKey = "REACDFLT";
+        let apiKey = "REACN1ED";
         let passedApiKey = this.props.apiKey;
         if (!passedApiKey && this.props.init && this.props.init.apiKey)
             passedApiKey = this.props.init.apiKey;
