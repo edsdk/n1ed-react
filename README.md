@@ -5,14 +5,14 @@
 **Q:** What can be better than TinyMCE?\
 **A:** The latest TinyMCE 6 + a free set of widgets, custom templates, modern UI, Flmngr file manager, ImgPen image editor, Bootstrap column editor, and visual configuration: [N1ED](https://n1ed.com).
 
-![N1ED screenshot](https://n1ed.com/img/screenshots/docs/widgets/button/edit-button.png)
+![N1ED screenshot](https://n1ed.com/img/index/main-screenshot.jpg)
 
 This module will help to integrate N1ED (bundled TinyMCE + all required free add-ons that power up it) into your React app.
 
 
 ## Install
 
-With [npm](https://npmjs.com/) installed, run
+With [npm](https://npmjs.com/) installed, run:
 
 ```
 $ npm install --save @edsdk/n1ed-react
